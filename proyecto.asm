@@ -16,6 +16,21 @@
 		li $v0, 10
 		syscall
 		
+	swap:
+
+	# SWAP (int *a, int *b])
+       		add $sp,$sp,-4
+       		sw $s0, 0($sp)
+       
+       		add $s0, $zero, $a1  	#t = 0 + a 
+       		add $a1, $zero, $a2	#a = 0 + b
+       		add $a2, $zero, $s0	#b = 0 + t
+       
+       		lw $s0, 0($sp)	 	#$so regresa a su valor anterior
+       		add $sp, $sp, 4		#restaura el stack pointer
+       		jr $ra			
+       		
+		
 	printArr:
 		# void printArr(int arr[], int n)
 		addi $sp, $sp, -8
@@ -24,7 +39,7 @@
 		sw $s2, 4($sp) # Tamaño del array
 		
 		for:
-			# for (in i = 0: i < n; ++i)
+			# for (int i = 0; i < n; ++i)
 			slt $t0, $s1, $s2
 			beq $t0, $zero, exit_for
 			
