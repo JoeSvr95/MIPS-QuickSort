@@ -26,7 +26,7 @@
        		add $a1, $zero, $a2	#a = 0 + b
        		add $a2, $zero, $s0	#b = 0 + t
        
-       		lw $s0, 0($sp)	 	#$so regresa a su valor anterior
+       		lw $s0, 0($sp)	 	#$s0 regresa a su valor anterior
        		add $sp, $sp, 4		#restaura el stack pointer
        		jr $ra			
        		
