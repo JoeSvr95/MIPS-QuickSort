@@ -1,2 +1,2 @@
 # MIPS-QuickSort
-Implementación de QuickSort de manera iterativa en MIPS Assembly
+Immmmmmmmmmmmmplementación de QuickSort de manera iterativa en MIPS Assembly
